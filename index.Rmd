@@ -1,0 +1,77 @@
+---
+
+title       : Stock Loader
+subtitle    : Easy chart Downloader
+author      : Bassell Deeb
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : standalone # {standalone, draft}
+knit        : slidify::knit2slides
+
+---
+
+
+## What's App!
+
+Here is the Stock loader an easy app to download and visualize Stocks on your computer
+The following slides contain
+
+> 1. How to use it
+> 2. How to make predictions
+> 3. Download content
+
+
+This app is very intuitive to use. Simply choose the Symbol you want to visualize.
+Add a time period and indicators to plan your strategy.
+Finally make predictions to see if your strategy aligns with a predictive model.
+
+
+
+---
+
+## How to use it 
+
+Choose one of the Symbols in the of the Dow Jones and choose a time period from the left hand side. A graph like this will show up
+
+```{r echo = F, results = 'asis', message= FALSE, verbose = FALSE, warning= FALSE}
+require(quantmod)
+getSymbols('YHOO')
+chartSeries(YHOO, theme = 'white')
+```
+
+---
+
+## How to use it 2
+
+Click on the checkboxes to add indicators and add it directly to the graph. Also choose one of the different options to see the graph using candlesticks, bars, lines (close)...
+
+```{r echo = F, results = 'asis', message= FALSE, verbose = FALSE, warning= FALSE}
+require(quantmod)
+getSymbols('YHOO')
+chartSeries(YHOO, theme = 'white')
+addRSI()
+addSMA()
+```
+
+---
+
+## Make Predictions
+Click on the prediction tab to make predictions. Use the slider on the bottom left side to choose the number of periods (days) to make your forecast on.
+
+```{r echo = F, results = 'asis', message= FALSE, verbose = FALSE, warning= FALSE}
+require(quantmod)
+getSymbols('YHOO')
+chartSeries(Next(YHOO, k = 10), theme = 'white')
+```
+
+---
+
+## Download Content
+Finally click on Download button to download the data of the stock to make your own analysis in csv format!! Good Luck!
+
+
+---
+
